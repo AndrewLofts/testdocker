@@ -1,0 +1,28 @@
+# This file is to test calling a  docker builder
+
+
+#1. Ensure Singularity is installed and loaded
+if ! which singularity; then module load singularity; fi
+
+
+#2. Pull the Oppni Docker File
+#3. Build the Oppni Docker File
+singularity build doppni.img docker://andrewlofts/testdockerfile
+
+
+#4. Sets up mount to docker and move files in and out
+singularity --bind /path/with/write:/run doppni.img
+
+scp [FILE_LOCATION] mounted/location
+
+
+#5. Tells the docker to execute the OPPNI Pipeline
+singularity exec doppni.img python [OPPNI_LOCATION] -i [INPUT_FILE] -c [PIPELINE_FILE] [OTHER FLAGS]
+
+# OPPNI EXECUTES...
+
+#6. Tells the docker to execute the OPPNI--status to check job completeion
+singularity exec doppni.img [OPPNI_LOCATION] -s [FILE_LOCATION]
+
+#7. Aquires the OPPNI status log file and indicates to CBRAIN that the job is complete
+

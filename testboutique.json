@@ -1,0 +1,34 @@
+{
+    "name": "testboutique",
+    "tool-version": "1.0.0",
+    "description": "Boutique JSON Descriptor for the OPPNI tool.",
+    "command-line": "bash doppni_builder ",
+    "inputs": [
+         {
+            "description": "Input file list (oppni -i option)", 
+            "value-key": "[INPUT_FILE]", 
+            "type": "File", 
+            "optional": false, 
+            "id": "infile", 
+            "name": "Input file"
+         },
+
+    ],
+    "output-files": [
+         {
+            "description": "Log of the oppni status check of the project", 
+            "path-template": "[MASK]_status_check.log", 
+            "optional": false, 
+            "id": "statuslogoutput", 
+            "name": "Statis Log Output"
+         }
+    ],
+    "error-codes": [
+        {
+            "code": 1,
+            "description": "Crashed"
+        }
+    ],
+
+
+}
