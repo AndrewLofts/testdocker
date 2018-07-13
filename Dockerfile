@@ -21,10 +21,10 @@ RUN apt-get install -y python
 
 # Making folders to store results
 RUN mkdir /maindir
-RUN cd maindir
+RUN cd /maindir
 
 # Moving the call scripts
 #COPY file/in/dir /place/to/put/it/defualt/pwd
-COPY testinput.txt 
+COPY testinput.txt /maindir
 
 # Waits for EXEC calls from the builder script
