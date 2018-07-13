@@ -1,8 +1,8 @@
 {
     "name": "testboutique",
     "tool-version": "1.0.0",
-    "description": "Boutique JSON Descriptor for the OPPNI tool.",
-    "command-line": "bash doppni_builder ",
+    "description": "Boutique JSON Descriptor for the TEST tool.",
+    "command-line": "bash testbuilder ",
     "inputs": [
          {
             "description": "Input file list (oppni -i option)", 
